@@ -1,0 +1,597 @@
+{
+  "tracks": {
+    "drag_strip": {
+      "id": "drag_strip",
+      "name": "Drag Strip Alpha",
+      "description": "A straight vertical track from bottom to top. First to cross wins!",
+      "type": "drag",
+      "difficulty": "easy",
+      "start_position": {
+        "x": 400,
+        "y": 550
+      },
+      "finish_position": {
+        "x": 400,
+        "y": 50
+      },
+      "surfaces": [
+        {
+          "type": "rect",
+          "x": 325,
+          "y": 0,
+          "width": 150,
+          "height": 600,
+          "color": [40, 40, 40]
+        }
+      ],
+      "barriers": [
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 325,
+          "height": 600,
+          "name": "left_barrier"
+        },
+        {
+          "type": "rect",
+          "x": 475,
+          "y": 0,
+          "width": 325,
+          "height": 600,
+          "name": "right_barrier"
+        }
+      ],
+      "decorative_lines": [
+        {
+          "type": "center_line",
+          "start": [400, 0],
+          "end": [400, 600],
+          "color": [255, 255, 0],
+          "width": 2,
+          "dashed": true,
+          "dash_length": 20,
+          "gap_length": 10
+        }
+      ],
+      "start_marker": {
+        "type": "line",
+        "start": [325, 550],
+        "end": [475, 550],
+        "width": 3
+      },
+      "finish_marker": {
+        "type": "line",
+        "start": [325, 50],
+        "end": [475, 50],
+        "width": 5
+      },
+      "finish_zone": {
+        "type": "line",
+        "direction": "horizontal",
+        "position": 50
+      }
+    },
+    "oval_99": {
+      "id": "oval_99",
+      "name": "The Horseshoe Circuit",
+      "description": "A 99% oval - race clockwise around the loop. Start and finish are separated by a barrier!",
+      "type": "oval",
+      "difficulty": "medium",
+      "start_position": {
+        "x": 420,
+        "y": 300
+      },
+      "finish_position": {
+        "x": 380,
+        "y": 300
+      },
+      "surfaces": [
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600,
+          "color": [40, 40, 40]
+        }
+      ],
+      "barriers": [
+        {
+          "type": "circle",
+          "x": 400,
+          "y": 300,
+          "radius": 100,
+          "name": "inner_circle"
+        },
+        {
+          "type": "rect",
+          "x": 395,
+          "y": 250,
+          "width": 10,
+          "height": 100,
+          "name": "center_divider"
+        }
+      ],
+      "decorative_lines": [
+        {
+          "type": "racing_line",
+          "description": "Suggested racing line circle",
+          "center": [400, 300],
+          "radius": 150,
+          "color": [100, 100, 100],
+          "width": 1,
+          "dashed": true,
+          "dash_length": 15,
+          "gap_length": 15,
+          "is_circle": true
+        }
+      ],
+      "start_marker": {
+        "type": "line",
+        "start": [410, 250],
+        "end": [410, 350],
+        "width": 3,
+        "label": "START"
+      },
+      "finish_marker": {
+        "type": "line",
+        "start": [390, 250],
+        "end": [390, 350],
+        "width": 5,
+        "label": "FINISH"
+      },
+      "finish_zone": {
+        "type": "rect",
+        "x": 350,
+        "y": 250,
+        "width": 40,
+        "height": 100
+      },
+      "racing_notes": "The center divider prevents shortcuts - dots must complete the full loop!"
+    },
+    "rally_course": {
+      "id": "rally_course",
+      "name": "Rally Point-to-Point",
+      "description": "Navigate curves from point A to point B. Speed and precision required!",
+      "type": "rally",
+      "difficulty": "hard",
+      "start_position": {
+        "x": 100,
+        "y": 550
+      },
+      "finish_position": {
+        "x": 700,
+        "y": 50
+      },
+      "surfaces": [
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600,
+          "color": [40, 40, 40]
+        }
+      ],
+      "barriers": [
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 50,
+          "height": 600,
+          "name": "left_wall"
+        },
+        {
+          "type": "rect",
+          "x": 750,
+          "y": 0,
+          "width": 50,
+          "height": 600,
+          "name": "right_wall"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 30,
+          "name": "top_wall"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 570,
+          "width": 800,
+          "height": 30,
+          "name": "bottom_wall"
+        },
+        {
+          "type": "rect",
+          "x": 200,
+          "y": 400,
+          "width": 200,
+          "height": 120,
+          "name": "chicane_left"
+        },
+        {
+          "type": "rect",
+          "x": 400,
+          "y": 200,
+          "width": 200,
+          "height": 120,
+          "name": "chicane_right"
+        }
+      ],
+      "decorative_lines": [],
+      "start_marker": {
+        "type": "line",
+        "start": [80, 560],
+        "end": [120, 560],
+        "width": 3
+      },
+      "finish_marker": {
+        "type": "line",
+        "start": [680, 40],
+        "end": [720, 40],
+        "width": 5
+      },
+      "finish_zone": {
+        "type": "rect",
+        "x": 670,
+        "y": 30,
+        "width": 60,
+        "height": 40
+      }
+    },
+    "daytona_oval": {
+      "id": "daytona_oval",
+      "name": "Daytona Speedway",
+      "description": "Classic NASCAR-style oval. Banking not included... yet!",
+      "type": "oval",
+      "difficulty": "medium",
+      "start_position": {
+        "x": 400,
+        "y": 520
+      },
+      "finish_position": {
+        "x": 400,
+        "y": 500
+      },
+      "surfaces": [
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600,
+          "color": [40, 40, 40]
+        }
+      ],
+      "barriers": [
+        {
+          "type": "rect",
+          "x": 100,
+          "y": 150,
+          "width": 600,
+          "height": 300,
+          "name": "inner_field"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 100,
+          "name": "top_wall"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 500,
+          "width": 800,
+          "height": 100,
+          "name": "bottom_wall"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 100,
+          "width": 50,
+          "height": 400,
+          "name": "left_wall"
+        },
+        {
+          "type": "rect",
+          "x": 750,
+          "y": 100,
+          "width": 50,
+          "height": 400,
+          "name": "right_wall"
+        },
+        {
+          "type": "rect",
+          "x": 395,
+          "y": 500,
+          "width": 10,
+          "height": 20,
+          "name": "start_finish_divider"
+        }
+      ],
+      "decorative_lines": [],
+      "start_marker": {
+        "type": "line",
+        "start": [410, 500],
+        "end": [410, 540],
+        "width": 3
+      },
+      "finish_marker": {
+        "type": "line",
+        "start": [390, 500],
+        "end": [390, 540],
+        "width": 5
+      },
+      "finish_zone": {
+        "type": "rect",
+        "x": 350,
+        "y": 500,
+        "width": 40,
+        "height": 40
+      },
+      "racing_notes": "Race clockwise around the oval. Complete the loop to finish!"
+    },
+    "indy_circuit": {
+      "id": "indy_circuit",
+      "name": "Indianapolis Motor Speedway",
+      "description": "The legendary brickyard - four turns of precision racing.",
+      "type": "circuit",
+      "difficulty": "hard",
+      "start_position": {
+        "x": 400,
+        "y": 540
+      },
+      "finish_position": {
+        "x": 400,
+        "y": 520
+      },
+      "surfaces": [
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600,
+          "color": [40, 40, 40]
+        }
+      ],
+      "barriers": [
+        {
+          "type": "rect",
+          "x": 150,
+          "y": 100,
+          "width": 500,
+          "height": 400,
+          "name": "inner_rectangle"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 50,
+          "name": "outer_top"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 550,
+          "width": 800,
+          "height": 50,
+          "name": "outer_bottom"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 50,
+          "width": 100,
+          "height": 500,
+          "name": "outer_left"
+        },
+        {
+          "type": "rect",
+          "x": 700,
+          "y": 50,
+          "width": 100,
+          "height": 500,
+          "name": "outer_right"
+        },
+        {
+          "type": "rect",
+          "x": 395,
+          "y": 530,
+          "width": 10,
+          "height": 20,
+          "name": "start_finish_divider"
+        }
+      ],
+      "decorative_lines": [],
+      "start_marker": {
+        "type": "line",
+        "start": [410, 530],
+        "end": [410, 550],
+        "width": 3
+      },
+      "finish_marker": {
+        "type": "line",
+        "start": [390, 530],
+        "end": [390, 550],
+        "width": 5
+      },
+      "finish_zone": {
+        "type": "rect",
+        "x": 350,
+        "y": 520,
+        "width": 40,
+        "height": 30
+      },
+      "racing_notes": "Four 90-degree turns - precision matters! Counter-clockwise racing."
+    },
+    "maniac_mayhem": {
+      "id": "maniac_mayhem",
+      "name": "Maniac Mayhem",
+      "description": "TrackMania-inspired chaos! Obstacles, slaloms, dead ends, and dual paths.",
+      "type": "technical",
+      "difficulty": "extreme",
+      "start_position": {
+        "x": 80,
+        "y": 550
+      },
+      "finish_position": {
+        "x": 720,
+        "y": 50
+      },
+      "surfaces": [
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600,
+          "color": [40, 40, 40]
+        }
+      ],
+      "barriers": [
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 40,
+          "height": 600,
+          "name": "left_wall"
+        },
+        {
+          "type": "rect",
+          "x": 760,
+          "y": 0,
+          "width": 40,
+          "height": 600,
+          "name": "right_wall"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 20,
+          "name": "top_wall"
+        },
+        {
+          "type": "rect",
+          "x": 0,
+          "y": 580,
+          "width": 800,
+          "height": 20,
+          "name": "bottom_wall"
+        },
+        {
+          "type": "rect",
+          "x": 200,
+          "y": 450,
+          "width": 30,
+          "height": 100,
+          "name": "slalom_1"
+        },
+        {
+          "type": "rect",
+          "x": 350,
+          "y": 400,
+          "width": 30,
+          "height": 100,
+          "name": "slalom_2"
+        },
+        {
+          "type": "rect",
+          "x": 500,
+          "y": 450,
+          "width": 30,
+          "height": 100,
+          "name": "slalom_3"
+        },
+        {
+          "type": "rect",
+          "x": 150,
+          "y": 250,
+          "width": 200,
+          "height": 40,
+          "name": "obstacle_block_1"
+        },
+        {
+          "type": "rect",
+          "x": 450,
+          "y": 280,
+          "width": 200,
+          "height": 40,
+          "name": "obstacle_block_2"
+        },
+        {
+          "type": "circle",
+          "x": 250,
+          "y": 150,
+          "radius": 40,
+          "name": "circular_obstacle_1"
+        },
+        {
+          "type": "circle",
+          "x": 550,
+          "y": 180,
+          "radius": 40,
+          "name": "circular_obstacle_2"
+        },
+        {
+          "type": "rect",
+          "x": 600,
+          "y": 350,
+          "width": 120,
+          "height": 30,
+          "name": "dead_end_trap"
+        }
+      ],
+      "decorative_lines": [],
+      "start_marker": {
+        "type": "line",
+        "start": [60, 560],
+        "end": [100, 560],
+        "width": 3
+      },
+      "finish_marker": {
+        "type": "line",
+        "start": [700, 40],
+        "end": [740, 40],
+        "width": 5
+      },
+      "finish_zone": {
+        "type": "rect",
+        "x": 690,
+        "y": 20,
+        "width": 60,
+        "height": 50
+      },
+      "racing_notes": "Multiple paths exist - find the fastest route! Obstacles everywhere!"
+    }
+  },
+  "metadata": {
+    "version": "2.0",
+    "last_updated": "2026-05-16",
+    "total_tracks": 6,
+    "enabled_tracks": 6
+  },
+  "track_order": [
+    "drag_strip",
+    "oval_99",
+    "rally_course",
+    "daytona_oval",
+    "indy_circuit",
+    "maniac_mayhem"
+  ]
+}

@@ -1,0 +1,154 @@
+flowchart TD
+    %% Public Flow
+    subgraph Public [Public Access - No Auth]
+        Landing[Landing Page]
+        About[About/How It Works]
+        PublicLeaderboard[Public Leaderboard]
+        GitHub[GitHub Repository]
+    end
+
+    %% Authentication Flow
+    subgraph Auth [Authentication]
+        Login[Login/Signup]
+        OAuth[OAuth Provider]
+        Onboarding[Tutorial/Onboarding]
+    end
+
+    %% Main Application
+    subgraph App [Main Application]
+        Dashboard[Dashboard Hub]
+        
+        subgraph Training [Training System]
+            TrainEnv[Training Environment]
+            TrackSelect[Track Selection]
+            AlgoConfig[Algorithm Configuration]
+            DNALibrary[DNA/Model Library]
+            TrainStats[Training Statistics]
+        end
+        
+        subgraph Racing [Competition System]
+            RaceEnv[Racing Environment]
+            TournamentLobby[Tournament Lobby]
+            QuickRace[Quick Race]
+            ReplayViewer[Replay Viewer]
+        end
+        
+        subgraph Config [Configuration]
+            VehicleConfig[Vehicle Configuration]
+            DriverConfig[Driver Settings]
+            UserProfile[User Profile]
+        end
+        
+        subgraph Analytics [Performance Analytics]
+            PerfMetrics[Performance Metrics]
+            TrackPerformance[Track Performance]
+            RankingHistory[Ranking History]
+            Achievements[Achievements]
+        end
+    end
+
+    %% Data Layer
+    subgraph Data [Data Layer]
+        AuthDB[(Authentication DB)]
+        UserDB[(User Profiles)]
+        VehicleDB[(Vehicle Data)]
+        DriverDB[(Driver DNA/Models)]
+        RaceDB[(Race Results)]
+        LeaderboardDB[(Leaderboard)]
+        PointsDB[(Points/Economy)]
+    end
+
+    %% User Journey - First Time
+    Landing -->|View Info| About
+    Landing -->|Check Rankings| PublicLeaderboard
+    Landing -->|Open Source| GitHub
+    Landing -->|Sign Up| Login
+    Login -->|OAuth| OAuth
+    OAuth -->|Success| Onboarding
+    Onboarding -->|Complete| Dashboard
+
+    %% User Journey - Returning
+    Login -->|Has Account| Dashboard
+
+    %% Dashboard Navigation
+    Dashboard -->|Start Training| TrainEnv
+    Dashboard -->|Join Race| RaceEnv
+    Dashboard -->|View Stats| PerfMetrics
+    Dashboard -->|Configure| VehicleConfig
+    Dashboard -->|Profile| UserProfile
+
+    %% Training Flow
+    TrainEnv -->|Select Track| TrackSelect
+    TrainEnv -->|Configure| AlgoConfig
+    TrainEnv -->|Save/Load| DNALibrary
+    TrainEnv -->|View Progress| TrainStats
+    TrainStats -->|Continue| TrainEnv
+    DNALibrary -->|Load Model| TrainEnv
+    TrainEnv -->|Test Driver| RaceEnv
+
+    %% Racing Flow
+    RaceEnv -->|Tournament| TournamentLobby
+    RaceEnv -->|Quick Match| QuickRace
+    QuickRace -->|Finish| ReplayViewer
+    TournamentLobby -->|Join| QuickRace
+    ReplayViewer -->|Analyze| PerfMetrics
+
+    %% Configuration Flow
+    VehicleConfig -->|Configure Driver| DriverConfig
+    DriverConfig -->|Apply Changes| TrainEnv
+    VehicleConfig -->|Spend Points| PointsDB
+    UserProfile -->|View Achievements| Achievements
+
+    %% Analytics Flow
+    PerfMetrics -->|Track Details| TrackPerformance
+    PerfMetrics -->|Rank History| RankingHistory
+    PerfMetrics -->|Achievements| Achievements
+    TrackPerformance -->|Train More| TrainEnv
+
+    %% Data Connections
+    AuthDB <-->|Verify| Login
+    UserDB <-->|Profile Data| UserProfile
+    UserDB <-->|Stats| PerfMetrics
+    UserDB -->|Rankings| PublicLeaderboard
+    VehicleDB <-->|Config| VehicleConfig
+    DriverDB <-->|DNA| DNALibrary
+    DriverDB -->|Load Model| TrainEnv
+    DriverDB -->|Load Model| RaceEnv
+    RaceDB -->|Results| PerfMetrics
+    RaceDB -->|Rankings| LeaderboardDB
+    LeaderboardDB -->|Display| PublicLeaderboard
+    PointsDB <-->|Balance| Dashboard
+    PointsDB <-->|Earn/Spend| VehicleConfig
+
+    %% Training Session Data Flow
+    TrainEnv -->|Save DNA| DriverDB
+    TrainEnv -->|Log Stats| RaceDB
+
+    %% Race Session Data Flow
+    RaceEnv -->|Record Results| RaceDB
+    RaceEnv -->|Update Points| PointsDB
+    RaceEnv -->|Save Replay| DriverDB
+
+    %% Styling
+    style Public fill:#2E86C1,stroke:#1A5276,color:#fff
+    style Auth fill:#28B463,stroke:#196F3D,color:#fff
+    style Training fill:#AF7AC5,stroke:#6C3483,color:#fff
+    style Racing fill:#E74C3C,stroke:#943126,color:#fff
+    style Config fill:#F39C12,stroke:#935116,color:#fff
+    style Analytics fill:#3498DB,stroke:#1F618D,color:#fff
+    style Data fill:#E67E22,stroke:#935116,color:#fff
+    
+    %% Node Styling
+    classDef publicNode fill:#5DADE2,stroke:#1A5276,stroke-width:2px
+    classDef authNode fill:#58D68D,stroke:#196F3D,stroke-width:2px
+    classDef trainNode fill:#D2B4DE,stroke:#6C3483,stroke-width:2px
+    classDef raceNode fill:#EC7063,stroke:#943126,stroke-width:2px
+    classDef configNode fill:#F8C471,stroke:#935116,stroke-width:2px
+    classDef dataNode fill:#EB984E,stroke:#935116,stroke-width:2px
+    
+    class Landing,About,PublicLeaderboard,GitHub publicNode
+    class Login,OAuth,Onboarding authNode
+    class TrainEnv,TrackSelect,AlgoConfig,DNALibrary,TrainStats trainNode
+    class RaceEnv,TournamentLobby,QuickRace,ReplayViewer raceNode
+    class VehicleConfig,DriverConfig,UserProfile configNode
+    class AuthDB,UserDB,VehicleDB,DriverDB,RaceDB,LeaderboardDB,PointsDB dataNode

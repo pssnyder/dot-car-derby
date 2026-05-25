@@ -1,0 +1,78 @@
+flowchart TD
+    %% UI Components
+    subgraph UI [UI Flow]
+        direction TB
+            Landing[Landing Page]
+            About[Project Overview]
+            Repo[GitHub Repository]
+            Rank[Leaderboard]
+            Login[Login Page]
+            Dash[Dashboard]
+            Perf[Performance Metrics]
+            Player[Profile]
+    end
+
+    %% Configuration Components
+    subgraph Config [Configuration Flow]
+        direction TB
+            Car(Vehicle Configuration)
+    end
+
+    %% Simulation Components
+    subgraph Sim [Simulation Flow]
+        direction TB
+            Train((Training Environment))
+            Test((Testing Environment))
+            Race((Competition Environment))
+    end
+
+    %% Data Components
+    subgraph Data [Data Flow]
+        direction TB
+            Auth[(Authentication)]
+            Players[(Player Data)]
+            Cars[(Vehicle Data)]
+            Models[(Model Data)]
+            Races[(Race Data)]
+    end
+
+    %% User Flow
+    Landing --> About
+    Landing --> Repo
+    Landing --> Rank
+    Landing --> Login
+    Login --> Dash
+    Dash --> Perf
+    Dash --> Player
+    Dash --> Car
+    Dash --> Train
+    Dash --> Test
+    Dash --> Race
+
+    %% Data Flow
+    Auth <--> Login
+    Players --> Player
+    Players --> Perf
+    Players --> Rank
+    Players <--> Models
+    Cars --> Car
+    Cars --> Train
+    Cars --> Test
+    Cars --> Race
+    Models <--> Train
+    Models --> Test
+    Models --> Race
+    Races --> Rank
+    Races --> Perf
+    Races --> Race
+    
+    %% Simulation Flow
+    Train --> Test
+    Test --> Race
+
+
+    %% Styling
+    style UI stroke:#2E86C1, stroke-width:1px
+    style Config stroke:#28B463, stroke-width:1px
+    style Sim stroke:#AF7AC5, stroke-width:1px
+    style Data stroke:#E67E22, stroke-width:1px

@@ -1,0 +1,85 @@
+{
+  "current_track": "maniac_mayhem",
+  "race_config": {
+    "description": "Configure which track to load from tracks_database.json"
+  },
+  "track_settings": {
+    "width": 800,
+    "height": 600,
+    "track_color": [
+      40,
+      40,
+      40
+    ],
+    "barrier_color": [
+      200,
+      50,
+      50
+    ],
+    "start_line_color": [
+      255,
+      255,
+      255
+    ],
+    "finish_line_color": [
+      76,
+      175,
+      80
+    ],
+    "center_line_color": [
+      255,
+      255,
+      0
+    ]
+  },
+  "dot_settings": {
+    "population_size": 50,
+    "advancement_count": 25,
+    "max_velocity": 5,
+    "brain_size": 800,
+    "mutation_rate": 0.01,
+    "dot_size": 3,
+    "dot_color": [
+      66,
+      165,
+      245
+    ],
+    "champion_dot_size": 5,
+    "champion_dot_color": [
+      255,
+      215,
+      0
+    ],
+    "top10_dot_color": [
+      255,
+      107,
+      107
+    ],
+    "eliminated_dot_color": [
+      100,
+      100,
+      100
+    ]
+  },
+  "display_settings": {
+    "screen_color": [
+      18,
+      18,
+      18
+    ],
+    "font_size": 18,
+    "font_color": [
+      76,
+      175,
+      80
+    ],
+    "show_rankings": true,
+    "show_eliminated": true,
+    "fps": 60
+  },
+  "simulation_settings": {
+    "simulation_type": "genetic",
+    "auto_save_frequency": 10,
+    "save_directory": "race_saves"
+  }
+}
